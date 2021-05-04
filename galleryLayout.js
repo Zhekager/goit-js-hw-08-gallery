@@ -1,6 +1,8 @@
+
 import gallery from './gallery-items.js';
 
 const createGallery = ({preview, original, description}) => {
+  
     return `<li class="gallery-item">
       <a class= "gallery_link" href="${original}">
        <img
@@ -14,8 +16,14 @@ const createGallery = ({preview, original, description}) => {
       </a>
     </li>`;
 };
+console.log(createGallery)
 
 const makeMarkup = gallery.map(img => createGallery(img)).join('');
+// console.log(makeMarkup)
 
 const galleryContainer = document.querySelector('.js-gallery');
+
 galleryContainer.insertAdjacentHTML("afterbegin", makeMarkup);
+console.log(galleryContainer)
+
+
